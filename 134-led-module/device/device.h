@@ -10,4 +10,3 @@
 #endif
 
 void device_info(void);
-void log_version(void);

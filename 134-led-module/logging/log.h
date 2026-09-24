@@ -11,6 +11,7 @@
 #endif
 
 void log_prefix(const char *level, const char *function, int line);
+void log_version(void);
 
 #define LOG_INF(...)                                \
     do                                              \
