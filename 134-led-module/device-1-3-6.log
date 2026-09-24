@@ -1,0 +1,19 @@
+задание: 1.3.6
+проект: 134-led-module
+устройство: 2e8a:000a
+серийный номер: 5054316520D3909C
+порт: COM3
+начало: 2026-09-24T12:19:14
+   0.000 --> v
+   0.002 <-- dbg main:67 got v
+   0.004 <-- device: es-led-module 1.0.0, built Sep 24 2026 12:17:02, log level 3
+   1.015 --> e
+   1.023 <-- dbg main:67 got e
+   1.024 <-- inf handle_command:21 led 
+   2.028 --> d
+   2.043 <-- dbg main:67 got d
+   2.044 <-- dbg handle_command:27 got
+   3.055 --> q
+   3.064 <-- dbg main:67 got q
+   3.064 <-- err handle_command:35 got
+итог: отправлено команд 4
