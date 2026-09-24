@@ -18,13 +18,13 @@ bool handle_command(int command, bool led)
     {
         led = true;
         led_set(led);
-        LOG_INF("led %c\n", led);
+        LOG_INF("got %c\n", led);
     }
     else if (command == 'd')
     {
         led = false;
         led_set(led);
-        LOG_DBG("got %c\n", led);
+        LOG_INF("got %c\n", led);
     }
     else if (command == 'v')
     {
