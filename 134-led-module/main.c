@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "led.h"
 #include "log.h"
+#include "device.h"
 
 const uint DEBOUNCE = 20;
 const uint PIN = 15;
@@ -30,6 +31,10 @@ bool handle_command(int command, bool led)
     else if (command == 'v')
     {
         log_version();
+    }
+    else if (command == 'i')
+    {
+        device_info();
     }
     else
     {
