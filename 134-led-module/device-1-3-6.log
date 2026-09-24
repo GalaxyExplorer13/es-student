@@ -3,17 +3,17 @@
 устройство: 2e8a:000a
 серийный номер: 5054316520D3909C
 порт: COM3
-начало: 2026-09-24T12:35:27
+начало: 2026-09-24T12:44:38
    0.000 --> v
-   0.002 <-- dbg main:67 got v
-   0.003 <-- device: es-led-module 1.0.0, built Sep 24 2026 12:17:02, log level 3
-   1.014 --> e
-   1.022 <-- dbg main:67 got e
-   1.022 <-- inf handle_command:21 got 
-   2.036 --> d
-   2.043 <-- dbg main:67 got d
-   2.044 <-- inf handle_command:27 got
-   3.056 --> q
-   3.063 <-- dbg main:67 got q
-   3.063 <-- err handle_command:35 got
+   0.009 <-- dbg main:68 got v
+   0.010 <-- device: es-led-module 1.0.0, built Sep 24 2026 12:17:02, log level 3
+   1.022 --> e
+   1.030 <-- dbg main:68 got e
+   1.030 <-- inf handle_command:21 led on 
+   2.034 --> d
+   2.050 <-- dbg main:68 got d
+   2.051 <-- inf handle_command:28 led on
+   3.062 --> q
+   3.070 <-- dbg main:68 got q
+   3.071 <-- err handle_command:36 unknown command: q
 итог: отправлено команд 4

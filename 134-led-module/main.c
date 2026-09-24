@@ -18,13 +18,14 @@ bool handle_command(int command, bool led)
     {
         led = true;
         led_set(led);
-        LOG_INF("got %c\n", led);
+        LOG_INF("led on %c\n", led);
     }
+
     else if (command == 'd')
     {
         led = false;
         led_set(led);
-        LOG_INF("got %c\n", led);
+        LOG_INF("led on %c\n", led);
     }
     else if (command == 'v')
     {
@@ -32,7 +33,7 @@ bool handle_command(int command, bool led)
     }
     else
     {
-        LOG_ERR("got %c\n", led);
+        LOG_ERR("unknown command: %c\n", command);
     }
     return led;
 }
