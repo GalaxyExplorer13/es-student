@@ -3,26 +3,26 @@
 устройство: 2e8a:000a
 серийный номер: 5054316520D3909C
 порт: COM3
-начало: 2026-09-30T17:18:14
+начало: 2026-09-30T17:36:00
    0.000 --> enable
-   0.136 <-- enable
-   0.137 <-- dbg read_line:66 got enable
-   0.139 <-- inf handle_command:27 led on 
-   2.170 --> disable
-   2.316 <-- disable
-   2.318 <-- dbg read_line:66 got disable
-   2.319 <-- inf handle_command:33 led off
-   4.342 --> info
-   4.437 <-- info
-   4.439 <-- dbg read_line:66 got info
-   4.441 <-- project: 134-led-module
-   4.444 <-- repo:    https://github.com/GalaxyExplorer13/es-student
-   4.445 <-- board:   pico
-   4.448 <-- serial:  5054316520D3909C
-   4.450 <-- chip:    manufacturer 0x927, part 0x0002, revision 2
-   4.451 <-- pico_sdk: 2.3.0
-   6.484 --> nosuchcommand
-   6.758 <-- nosuchcommand
-   6.760 <-- dbg read_line:66 got nosuchcommand
-   6.762 <-- err handle_command:46 unknown command: �
+   0.125 <-- enable
+   0.126 <-- dbg read_line:66 got enable
+   0.126 <-- inf handle_command:27 led on 
+   2.158 --> disable
+   2.306 <-- disable
+   2.306 <-- dbg read_line:66 got disable
+   2.307 <-- inf handle_command:33 led off
+   4.334 --> info
+   4.426 <-- info
+   4.427 <-- dbg read_line:66 got info
+   4.428 <-- project: 211-command-usb
+   4.429 <-- repo:    https://github.com/GalaxyExplorer13/es-student
+   4.429 <-- board:   pico
+   4.429 <-- serial:  5054316520D3909C
+   4.430 <-- chip:    manufacturer 0x927, part 0x0002, revision 2
+   4.430 <-- pico_sdk: 2.3.0
+   6.450 --> nosuchcommand
+   6.728 <-- nosuchcommand
+   6.729 <-- dbg read_line:66 got nosuchcommand
+   6.729 <-- err handle_command:46 unknown command: nosuchcommand
 итог: отправлено команд 4, принято строк 17
