@@ -43,7 +43,7 @@ void handle_command(const char *command)
     }
     else
     {
-        LOG_ERR("unknown command: %c\n", command);
+        LOG_ERR("unknown command: %s\n", command);
     }
 }
 
