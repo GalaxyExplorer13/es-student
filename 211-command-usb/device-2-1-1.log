@@ -3,26 +3,22 @@
 устройство: 2e8a:000a
 серийный номер: 5054316520D3909C
 порт: COM3
-начало: 2026-09-30T17:36:00
+начало: 2026-09-30T17:49:29
    0.000 --> enable
-   0.125 <-- enable
-   0.126 <-- dbg read_line:66 got enable
-   0.126 <-- inf handle_command:27 led on 
+   0.130 <-- enable
+   0.131 <-- dbg read_line:66 got enable
+   0.131 <-- inf handle_command:27 led on 
    2.158 --> disable
-   2.306 <-- disable
-   2.306 <-- dbg read_line:66 got disable
-   2.307 <-- inf handle_command:33 led off
+   2.311 <-- disable
+   2.312 <-- dbg read_line:66 got disable
+   2.313 <-- inf handle_command:33 led off
    4.334 --> info
-   4.426 <-- info
-   4.427 <-- dbg read_line:66 got info
-   4.428 <-- project: 211-command-usb
-   4.429 <-- repo:    https://github.com/GalaxyExplorer13/es-student
-   4.429 <-- board:   pico
-   4.429 <-- serial:  5054316520D3909C
-   4.430 <-- chip:    manufacturer 0x927, part 0x0002, revision 2
-   4.430 <-- pico_sdk: 2.3.0
-   6.450 --> nosuchcommand
-   6.728 <-- nosuchcommand
-   6.729 <-- dbg read_line:66 got nosuchcommand
-   6.729 <-- err handle_command:46 unknown command: nosuchcommand
-итог: отправлено команд 4, принято строк 17
+   4.431 <-- info
+   4.432 <-- dbg read_line:66 got info
+   4.433 <-- project: 211-command-usb
+   4.433 <-- pico_sdk: 2.3.0
+   6.459 --> nosuchcommand
+   6.733 <-- nosuchcommand
+   6.734 <-- dbg read_line:66 got nosuchcommand
+   6.734 <-- err handle_command:46 unknown command: nosuchcommand
+итог: отправлено команд 4, принято строк 13
