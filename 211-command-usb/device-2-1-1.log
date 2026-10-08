@@ -3,22 +3,22 @@
 устройство: 2e8a:000a
 серийный номер: 5054316520D3909C
 порт: COM3
-начало: 2026-09-30T17:49:29
+начало: 2026-10-08T13:13:20
    0.000 --> enable
-   0.130 <-- enable
-   0.131 <-- dbg read_line:66 got enable
-   0.131 <-- inf handle_command:27 led on 
-   2.158 --> disable
-   2.311 <-- disable
-   2.312 <-- dbg read_line:66 got disable
-   2.313 <-- inf handle_command:33 led off
-   4.334 --> info
-   4.431 <-- info
-   4.432 <-- dbg read_line:66 got info
-   4.433 <-- project: 211-command-usb
-   4.433 <-- pico_sdk: 2.3.0
-   6.459 --> nosuchcommand
-   6.733 <-- nosuchcommand
-   6.734 <-- dbg read_line:66 got nosuchcommand
-   6.734 <-- err handle_command:46 unknown command: nosuchcommand
+   0.137 <-- enable
+   0.138 <-- dbg read_line:66 got enable
+   0.138 <-- inf handle_command:27 led on 
+   2.145 --> disable
+   2.298 <-- disable
+   2.299 <-- dbg read_line:66 got disable
+   2.300 <-- inf handle_command:33 led off
+   4.339 --> info
+   4.439 <-- info
+   4.440 <-- dbg read_line:66 got info
+   4.441 <-- project: 211-command-usb
+   4.441 <-- pico-sdk: 2.3.0
+   6.464 --> nosuchcommand
+   6.740 <-- nosuchcommand
+   6.741 <-- dbg read_line:66 got nosuchcommand
+   6.742 <-- err handle_command:46 unknown command: nosuchcommand
 итог: отправлено команд 4, принято строк 13
