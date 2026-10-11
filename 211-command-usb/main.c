@@ -48,7 +48,7 @@ void cmd_ping(void)
     printf("pong\n");
 }
 
-void cmd_mem_info()
+void cmd_mem_info(void)
 {
     mem_info();
 }
