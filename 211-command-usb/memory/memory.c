@@ -83,15 +83,6 @@ void fw_info(void)
      uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
      uint16_t *fw_info_code = (uint16_t *)((uintptr_t)fw_info & ~1u);
      uint16_t *commands_code = (uint16_t *)((uintptr_t)commands & ~1u);
-     uint16_t *commands_en = (uint16_t *)((uintptr_t)commands[0].handler & ~1u);
-     uint16_t *commands_dis = (uint16_t *)((uintptr_t)commands[1].handler & ~1u);
-     uint16_t *commands_inf = (uint16_t *)((uintptr_t)commands[2].handler & ~1u);
-     uint16_t *commands_ver = (uint16_t *)((uintptr_t)commands[3].handler & ~1u);
-     uint16_t *commands_ping = (uint16_t *)((uintptr_t)commands[4].handler & ~1u);
-     uint16_t *commands_mem = (uint16_t *)((uintptr_t)commands[5].handler & ~1u);
-     uint16_t *commands_fw = (uint16_t *)((uintptr_t)commands[6].handler & ~1u);
-
-
      uint32_t stack_variable = 1946;
      uint32_t *heap_variable = malloc(sizeof(uint32_t));
 
@@ -100,26 +91,23 @@ void fw_info(void)
           *heap_variable = 1951;
      }
 
+     printf("%-18s %-12s %-10s\n", "object", "address", "value");
+     printf("%-18s 0x%08x 0x%04x\n", "main",    main_code, *main_code);
+     printf("%-18s 0x%08x 0x%04x\n", "fw_info", fw_info,   *fw_info);
+     printf("%-18s 0x%08x\n", "commands", commands);
+     for (uint i = 0; i <command_count; i++)
+     {
+          uint16_t *comm = (uint16_t *)((uintptr_t)commands[i].handler & ~1u);
+          printf("%-18s 0x%08x\n", commands[i].name, comm);
+     }
 
+     printf("%-18s %p  %s\n", "DEVICE_PROJECT",(void*)DEVICE_PROJECT, DEVICE_PROJECT);
+     printf("%-18s %p  %s\n", "DEVICE_BOARD",(void*)DEVICE_BOARD,   DEVICE_BOARD);
 
-     printf("%-10s %-10s %-10s\n", "object", "address", "value");
-     printf("%-10s %08x %08x\n", "main", main_code, *main_code);
-     printf("%-10s %08x %08x\n", "fw_info", fw_info, *fw_info);
-     printf("%-10s %08x\n", "commands", commands_code);
-     printf("%-10s %08x\n", "enable", commands_en);
-     printf("%-10s %08x\n", "disable", commands_dis);
-     printf("%-10s %08x\n", "info", commands_inf);
-     printf("%-10s %08x\n", "version", commands_ver);
-     printf("%-10s %08x\n", "ping", commands_ping);
-     printf("%-10s %08x\n", "mem_info", commands_mem);
-     printf("%-10s %08x\n", "fw_info", commands_fw);
-     printf("DEVICE_PROJECT  %p  %s\n", (void*)DEVICE_PROJECT, DEVICE_PROJECT);
-     printf("DEVICE_BOARD    %p  %s\n", (void*)DEVICE_BOARD,   DEVICE_BOARD);
-     printf("%-10s %08x %d\n", "data_variable", &data_variable, data_variable);
-     printf("%-10s %08x %d\n", "bss_variable", &bss_variable, bss_variable);
-     printf("%-10s %08x %d\n", "stack_variable", &stack_variable, stack_variable);
-     printf("%-10s %08x %d\n", "heap_variable", heap_variable, *heap_variable);
-
+     printf("%-18s %p  %d\n", "data_variable",  &data_variable,  data_variable);
+     printf("%-18s %p  %d\n", "bss_variable",   &bss_variable,   bss_variable);
+     printf("%-18s %p  %d\n", "stack_variable", &stack_variable, stack_variable);
+     printf("%-18s %p  %d\n", "heap_variable",  heap_variable,   *heap_variable);
 
      free(heap_variable);
 
