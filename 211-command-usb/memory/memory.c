@@ -93,7 +93,7 @@ void fw_info(void)
 
      printf("%-18s %-12s %-10s\n", "object", "address", "value");
      printf("%-18s 0x%08x 0x%04x\n", "main",    main_code, *main_code);
-     printf("%-18s 0x%08x 0x%04x\n", "fw_info", fw_info,   *fw_info);
+     printf("%-18s 0x%08x 0x%04x\n", "fw_info", fw_info, *fw_info);
      printf("%-18s 0x%08x\n", "commands", commands);
      for (uint i = 0; i <command_count; i++)
      {
@@ -101,13 +101,13 @@ void fw_info(void)
           printf("%-18s 0x%08x\n", commands[i].name, comm);
      }
 
-     printf("%-18s %p  %s\n", "DEVICE_PROJECT",(void*)DEVICE_PROJECT, DEVICE_PROJECT);
-     printf("%-18s %p  %s\n", "DEVICE_BOARD",(void*)DEVICE_BOARD,   DEVICE_BOARD);
+     printf("%-18s 0x%08x  %s\n", "DEVICE_PROJECT",(void*)DEVICE_PROJECT, DEVICE_PROJECT);
+     printf("%-18s 0x%08x  %s\n", "DEVICE_BOARD",(void*)DEVICE_BOARD,   DEVICE_BOARD);
 
-     printf("%-18s %p  %d\n", "data_variable",  &data_variable,  data_variable);
-     printf("%-18s %p  %d\n", "bss_variable",   &bss_variable,   bss_variable);
-     printf("%-18s %p  %d\n", "stack_variable", &stack_variable, stack_variable);
-     printf("%-18s %p  %d\n", "heap_variable",  heap_variable,   *heap_variable);
+     printf("%-18s 0x%08x  %d\n", "data_variable",  &data_variable,  data_variable);
+     printf("%-18s 0x%08x  %d\n", "bss_variable",   &bss_variable,   bss_variable);
+     printf("%-18s 0x%08x  %d\n", "stack_variable", &stack_variable, stack_variable);
+     printf("%-18s 0x%08x  %d\n", "heap_variable",  heap_variable,   *heap_variable);
 
      free(heap_variable);
 
