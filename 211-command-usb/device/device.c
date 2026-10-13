@@ -26,11 +26,11 @@ void device_info(void)
         (id & SYSINFO_CHIP_ID_REVISION_BITS) >> SYSINFO_CHIP_ID_REVISION_LSB;
 
     // вывод
-    printf("project: %s\n", DEVICE_PROJECT);
+    printf("DEVICE_PROJECT: %8u, %s\n", &DEVICE_PROJECT, DEVICE_PROJECT);
     // printf("repo:    %s\n", DEVICE_REPO);
-    // printf("board:   %s\n", DEVICE_BOARD);
+    printf("DEVICE_BOARD:   %8u, %s\n", &DEVICE_BOARD, DEVICE_BOARD);
     // printf("serial:  %s\n", board_id);
     // printf("chip:    manufacturer 0x%03x, part 0x%04x, revision %u\n",
         //    manufacturer, part, revision);
-    printf("pico-sdk: %s\n", PICO_SDK_VERSION_STRING);
+    //printf("pico-sdk: %s\n", PICO_SDK_VERSION_STRING);
 }

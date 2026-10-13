@@ -7,4 +7,5 @@
 
 
 void mem_info(void);
+void fw_info(void);
 static void row(const char *name, uintptr_t start, uintptr_t end);
