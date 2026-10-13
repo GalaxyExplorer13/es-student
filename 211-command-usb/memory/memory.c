@@ -80,9 +80,9 @@ void fw_info(void)
      bss_variable++;
      int main(void);
 
-     uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
-     uint16_t *fw_info_code = (uint16_t *)((uintptr_t)fw_info & ~1u);
-     uint16_t *commands_code = (uint16_t *)((uintptr_t)commands & ~1u);
+     // uint16_t *main_code = (uint16_t *)((uintptr_t)main & ~1u);
+     // uint16_t *fw_info_code = (uint16_t *)((uintptr_t)fw_info & ~1u);
+     // uint16_t *commands_code = (uint16_t *)((uintptr_t)commands & ~1u);
      uint32_t stack_variable = 1946;
      uint32_t *heap_variable = malloc(sizeof(uint32_t));
 
@@ -92,7 +92,7 @@ void fw_info(void)
      }
 
      printf("%-18s %-12s %-10s\n", "object", "address", "value");
-     printf("%-18s 0x%08x 0x%04x\n", "main",    main_code, *main_code);
+     printf("%-18s 0x%08x 0x%04x\n", "main",    main, *main);
      printf("%-18s 0x%08x 0x%04x\n", "fw_info", fw_info, *fw_info);
      printf("%-18s 0x%08x\n", "commands", commands);
      for (uint i = 0; i <command_count; i++)
