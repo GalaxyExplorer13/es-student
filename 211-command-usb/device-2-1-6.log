@@ -1,0 +1,45 @@
+задание: 2.1.6
+проект: 211-command-usb
+устройство: 2e8a:000a
+серийный номер: 5054316520D3909C
+порт: COM3
+начало: 2026-10-17T19:58:54
+   0.000 --> boot_info
+   0.191 <-- boot_info
+   0.191 <-- dbg read_line:123 got boot_info
+   0.192 <-- vector table 0x10000100
+   0.192 <-- stack top 0x20042000
+   0.193 <-- reset 0x100001f7
+   0.193 <-- reset 0x100001f6
+   0.193 <-- gpio in 0xd0000004
+   0.193 <-- led bit 0
+   0.194 <-- gpio_get 0
+   2.220 --> enable
+   2.352 <-- enable
+   2.353 <-- dbg read_line:123 got enable
+   2.353 <-- inf cmd_enable:20 led on 
+   4.399 --> boot_info
+   4.593 <-- boot_info
+   4.593 <-- dbg read_line:123 got boot_info
+   4.594 <-- vector table 0x10000100
+   4.594 <-- stack top 0x20042000
+   4.594 <-- reset 0x100001f7
+   4.595 <-- reset 0x100001f6
+   4.595 <-- gpio in 0xd0000004
+   4.595 <-- led bit 1
+   4.595 <-- gpio_get 1
+   6.618 --> disable
+   6.774 <-- disable
+   6.775 <-- dbg read_line:123 got disable
+   6.775 <-- inf cmd_disable:26 led off
+   8.807 --> boot_info
+   8.994 <-- boot_info
+   8.995 <-- dbg read_line:123 got boot_info
+   8.995 <-- vector table 0x10000100
+   8.995 <-- stack top 0x20042000
+   8.996 <-- reset 0x100001f7
+   8.996 <-- reset 0x100001f6
+   8.996 <-- gpio in 0xd0000004
+   8.996 <-- led bit 0
+   8.997 <-- gpio_get 0
+итог: отправлено команд 5, принято строк 33

@@ -2,6 +2,8 @@
 #include "command.h"
 #include "device.h"
 #include <stdlib.h>
+#include "led.h"
+
 
 uint32_t data_variable = 100;
 uint32_t bss_variable;
@@ -18,6 +20,36 @@ extern char __bss_end__;
 extern char __HeapLimit;
 extern char __StackBottom;
 extern char __StackTop;
+
+
+
+void boot_info(void)
+{
+     volatile uint32_t *gpio_in = (uint32_t *) (SIO_BASE + SIO_GPIO_IN_OFFSET);
+     const uint32_t *vectors = (const uint32_t *)VECTOR_TABLE;
+
+
+     uint gpio_pin = led_pin();
+     uint32_t level = (*gpio_in >> gpio_pin) & 1u;
+
+     uint gpio_pin_state = gpio_get(gpio_pin);
+
+     uint32_t stack_top = vectors[0];
+     uint32_t reset_handler = vectors[1];
+
+
+     uint32_t *stack = (uint32_t *)(stack_top & ~1u);
+     uint32_t *reset = (uint32_t *)(reset_handler & ~1u);
+
+     printf("%s 0x%08x\n", "vector table", VECTOR_TABLE);
+
+     printf("%-5s 0x%08x\n", "stack top", stack);
+     printf("%-5s 0x%08x\n", "reset", reset_handler);
+     printf("%-5s 0x%08x\n", "reset", reset);
+     printf("%-5s 0x%08x\n", "gpio in", gpio_in);
+     printf("%-5s %u\n", "led bit", level);
+     printf("%-5s %u\n", "gpio_get", gpio_pin_state);
+}
 
 
 static void row(const char *name, uintptr_t start, uintptr_t end)
@@ -112,3 +144,5 @@ void fw_info(void)
      free(heap_variable);
 
 }
+
+

@@ -5,6 +5,11 @@ const uint LED_PIN = 25;
 
 static bool led_state = false;
 
+uint led_pin(void)
+{
+    return LED_PIN;
+}
+
 void led_init(void)
 {
     gpio_init(LED_PIN);
