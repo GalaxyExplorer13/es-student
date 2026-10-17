@@ -33,14 +33,10 @@ printf("- %-13s 0x%08x %5u %6u %6u\n",
            device_card.revision);
 
 
-           
-
-
 unsigned fields = sizeof(device_card.version) + sizeof(device_card.name) + sizeof(device_card.revision);
 size_t size = sizeof(device_card);
 uint8_t padding = size - fields;
-printf("%s %u %s %u %s %u", "fields",fields, "sizeof",size, "padding",padding);
-
+printf("%s %u %s %u %s %u\n", "fields",fields, "sizeof",size, "padding",padding);
 }
 
 

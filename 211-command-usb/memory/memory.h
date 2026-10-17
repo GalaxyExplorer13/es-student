@@ -3,7 +3,6 @@
 #include "hardware/regs/addressmap.h"
 #include "pico/stdlib.h"
 #include "hardware/regs/sio.h"
-#define VECTOR_TABLE 0x10000100
 
 
 
