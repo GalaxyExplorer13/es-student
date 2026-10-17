@@ -8,21 +8,11 @@
 #include "pico/version.h"
 #include <stddef.h>
 
-struct info_t device_card;  // Определение глобальной переменной
-
-
-void init_device_card(void)
-{
-    volatile uint32_t *chip_id_for_card = (uint32_t *)(SYSINFO_BASE + SYSINFO_CHIP_ID_OFFSET);
-    uint32_t id = *chip_id_for_card;
-
-    uint32_t revision_for_card =
-        (id & SYSINFO_CHIP_ID_REVISION_BITS) >> SYSINFO_CHIP_ID_REVISION_LSB;
-
-    device_card.revision = revision_for_card;
-    device_card.version = 0x00000100;
-    snprintf(device_card.name, sizeof(device_card.name), "es-cmd-usb");
-}
+struct info_t device_card = {
+    .version  = 0x00000100,
+    .name     = DEVICE_NAME,
+    .revision = 2,
+};
 
 void dev_info(void)
 {
@@ -30,18 +20,21 @@ printf("%-13s %-13s %-13s %-13s %-13s\n", "struct","address","size","offset","va
 
 printf("%-13s 0x%08x %5u\n",
      "device_card", &device_card, sizeof(device_card.revision));
+printf("- %-13s 0x%08x %5u %6u 0x%08x\n",
+     "version", &device_card.version, sizeof(device_card.version), offsetof(struct info_t, version),
+           device_card.version);
 
+printf("- %-13s 0x%08x %5u %6u %6s\n",
+     "name", device_card.name, sizeof(device_card.name), offsetof(struct info_t, name),
+           device_card.name);
+           
 printf("- %-13s 0x%08x %5u %6u %6u\n",
      "revision", &device_card.revision, sizeof(device_card.revision), offsetof(struct info_t, revision),
            device_card.revision);
 
-printf("- %-13s 0x%08x %5u %6u 0x%08x\n",
-     "version", &device_card.version, sizeof(device_card.version), offsetof(struct info_t, version),
-           device_card.version);
+
            
-printf("- %-13s 0x%08x %5u %6u %6s\n",
-     "name", device_card.name, sizeof(device_card.name), offsetof(struct info_t, name),
-           device_card.name);
+
 
 unsigned fields = sizeof(device_card.version) + sizeof(device_card.name) + sizeof(device_card.revision);
 size_t size = sizeof(device_card);

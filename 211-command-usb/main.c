@@ -147,7 +147,6 @@ int main()
     bool led = false;
 
 
-    init_device_card(); // для считывания ревизии
 
     while (1)
     {
