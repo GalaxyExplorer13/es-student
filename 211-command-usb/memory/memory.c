@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include "led.h"
 
+#define VECTOR_TABLE 0x10000100
+
 
 uint32_t data_variable = 100;
 uint32_t bss_variable;
@@ -45,7 +47,7 @@ void boot_info(void)
 
      printf("%-5s 0x%08x\n", "stack top", stack);
      printf("%-5s 0x%08x\n", "reset", reset_handler);
-     printf("%-5s 0x%08x\n", "reset", reset);
+     printf("%-5s 0x%08x\n", "reset (even)", reset);
      printf("%-5s 0x%08x\n", "gpio in", gpio_in);
      printf("%-5s %u\n", "led bit", level);
      printf("%-5s %u\n", "gpio_get", gpio_pin_state);
