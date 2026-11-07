@@ -18,6 +18,6 @@ void clk_info(void)
     row("clk_peri", clock_get_hz(clk_peri) / 1000, frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_PERI));
     row("clk_usb", clock_get_hz(clk_usb) / 1000, frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_USB));
     row("clk_adc", clock_get_hz(clk_adc) / 1000, frequency_count_khz(CLOCKS_FC0_SRC_VALUE_CLK_ADC));
-    printf("%-8s %9s %12u\n", "ROSC", "-", (unsigned)(frequency_count_khz(CLOCKS_FC0_SRC_VALUE_ROSC_CLKSRC)));
+    printf("%-8s %9s %12u\n", "rosc", "-", (unsigned)(frequency_count_khz(CLOCKS_FC0_SRC_VALUE_ROSC_CLKSRC)));
 
 }
