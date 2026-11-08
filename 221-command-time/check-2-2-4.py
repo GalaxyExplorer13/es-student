@@ -1,5 +1,5 @@
-# Проверка задания п2.2.3 на устройстве: запускает расчёт π и спрашивает время с запуска, пока расчёт идёт
-# и записывает обмен в файл device-2-2-3.log.
+# Проверка задания п2.2.4 на устройстве: спрашивает среднюю и самую долгую итерацию до и после расчёта π
+# и записывает обмен в файл device-2-2-4.log.
 
 import time
 from datetime import datetime
@@ -10,13 +10,18 @@ from serial.tools import list_ports
 VENDOR_ID = 0x2E8A
 PRODUCT_ID = 0x000A
 
-TASK = "2.2.3"
+TASK = "2.2.4"
 PROJECT = "221-command-time"
-LOG_NAME = "device-2-2-3.log"
+LOG_NAME = "device-2-2-4.log"
 # Команда и сколько секунд слушать плату, прежде чем отправить следующую
 STEPS = [
-    ("calc_pi", 1),
-    ("uptime", 8),
+    ("main_time_reset", 2),
+    ("main_time_exec", 1),
+    ("calc_pi", 6),
+    ("main_time_exec", 5),
+    ("main_time_exec", 1),
+    ("main_time_reset", 1),
+    ("main_time_exec", 1),
 ]
 
 
