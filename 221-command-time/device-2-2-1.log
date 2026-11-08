@@ -3,24 +3,25 @@
 устройство: 2e8a:000a
 серийный номер: 5054316520D3909C
 порт: COM3
-начало: 2026-11-07T14:39:06
+начало: 2026-11-08T17:07:13
    0.000 --> clk_info
-   0.176 <-- clk_info
-   0.178 <-- dbg read_line:131 got clk_info
-   0.178 <-- signal  , set_khz , measured_khz
-   0.178 <-- clk_ref      12000        12001
-   0.179 <-- clk_sys     125000       125000
-   0.180 <-- clk_peri    125000       125000
-   0.181 <-- clk_usb      48000        48000
-   0.182 <-- clk_adc      48000        48000
-   0.184 <-- rosc             -         5567
-   2.032 --> info
-   2.123 <-- info
-   2.124 <-- dbg read_line:131 got info
-   2.125 <-- DEVICE_PROJECT: 268466952, 221-command-time
-   2.125 <-- device name:    es-cmd-usb
-   2.126 <-- DEVICE_BOARD:   268467020, pico
-   2.126 <-- serial:  5054316520D3909C
-   2.127 <-- chip:    manufacturer 0x927, part 0x0002, revision 2
-   2.127 <-- pico-sdk: 2.3.0
-итог: отправлено команд 2, принято строк 17
+   0.166 <-- clk_info
+   0.168 <-- dbg read_line:131 got clk_info
+   0.169 <-- signal  , set_khz , measured_khz
+   0.171 <-- clk_ref      12000        12001
+   0.172 <-- clk_sys     125000       125000
+   0.173 <-- clk_peri    125000       125000
+   0.174 <-- clk_usb      48000        48000
+   0.176 <-- clk_adc      48000        48000
+   0.177 <-- rosc             -         5574
+   2.020 --> info
+   2.114 <-- info
+   2.115 <-- dbg read_line:131 got info
+   2.117 <-- DEVICE_PROJECT: 268466968, 221-command-time
+   2.118 <-- device name:    es-cmd-usb
+   2.119 <-- DEVICE_BOARD:   268467036, pico
+   2.121 <-- serial:  5054316520D3909C
+   2.123 <-- chip:    manufacturer 0x927, part 0x0002, revision 2
+   2.124 <-- pico-sdk: 2.3.0
+   2.126 <-- project: 221-command-time
+итог: отправлено команд 2, принято строк 18
