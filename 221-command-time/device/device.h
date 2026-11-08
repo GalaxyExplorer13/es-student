@@ -23,3 +23,4 @@
 void device_info(void);
 uint32_t init_device_card(void);
 void dev_info(void);
+void uptime(void);

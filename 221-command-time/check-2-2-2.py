@@ -1,5 +1,5 @@
-# Проверка задания п2.2.1 на устройстве: спрашивает таблицу частот и паспорт прибора
-# и записывает обмен в файл device-2-2-1.log.
+# Проверка задания п2.2.2 на устройстве: попеременно спрашивает время с запуска и состояние светодиода
+# и записывает обмен в файл device-2-2-2.log.
 
 import time
 from datetime import datetime
@@ -10,13 +10,19 @@ from serial.tools import list_ports
 VENDOR_ID = 0x2E8A
 PRODUCT_ID = 0x000A
 
-TASK = "2.2.1"
+TASK = "2.2.2"
 PROJECT = "221-command-time"
-LOG_NAME = "device-2-2-1.log"
+LOG_NAME = "device-2-2-2.log"
 # Команда и сколько секунд слушать плату, прежде чем отправить следующую
 STEPS = [
-    ("clk_info", 2),
-    ("info", 2),
+    ("uptime", 0.4),
+    ("boot_info", 0.4),
+    ("uptime", 0.4),
+    ("boot_info", 0.4),
+    ("uptime", 0.4),
+    ("boot_info", 0.4),
+    ("uptime", 0.4),
+    ("boot_info", 0.4),
 ]
 
 

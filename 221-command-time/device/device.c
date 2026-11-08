@@ -74,3 +74,10 @@ void device_info(void)
 
 
 }
+
+
+void uptime(void)
+{
+    printf("uptime: %llu ms\n", time_us_64() / 1000);
+
+}

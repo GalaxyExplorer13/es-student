@@ -9,24 +9,23 @@
 
 
 #define LINE_SIZE 32
-
-const uint DEBOUNCE = 20;
-const uint PIN = 15;
 char line[LINE_SIZE];
 uint line_length = 0;
+const uint BLINK_HALF_PERIOD_MS = 500;
 
+uint64_t last_toggle_us = 0;
 
-void cmd_enable(void)
+void blink(void)
 {
-    led_set(1);
-    LOG_INF("led on %c\n", true);
+    uint64_t now_us = time_us_64();
+
+    if (now_us - last_toggle_us >= BLINK_HALF_PERIOD_MS * 1000)
+    {
+        last_toggle_us = now_us;
+        led_toggle();
+    }
 }
 
-void cmd_disable(void)
-{
-    led_set(0);
-    LOG_INF("led off %c\n", false);
-}
 
 void cmd_info(void)
 {
@@ -68,9 +67,12 @@ void cmd_clk_info(void)
     clk_info();
 }
 
+void cmd_uptime(void)
+{
+    uptime();
+}
+
 const struct command_t commands[] = {
-    { "enable", cmd_enable },
-    { "disable", cmd_disable },
     { "info", cmd_info },
     { "version", cmd_version },
     { "ping", cmd_ping },
@@ -78,7 +80,8 @@ const struct command_t commands[] = {
     {"fw_info", cmd_fw_info },
     {"dev_info", cmd_dev_info},
     {"boot_info", cmd_boot_info},
-    {"clk_info", cmd_clk_info}
+    {"clk_info", cmd_clk_info},
+    {"uptime", cmd_uptime}
 
 };
 
@@ -86,12 +89,6 @@ const uint command_count = sizeof(commands) / sizeof(commands[0]);
 
 
 
-bool get_button_debounce(uint pin)
-{
-    bool state = gpio_get(pin);
-    sleep_ms(DEBOUNCE);
-    return state;
-}
 
 
 void handle_command(const char *command)
@@ -147,25 +144,12 @@ void read_line(void)
 int main()
 {
     stdio_init_all(); // io
-    gpio_pull_up(PIN);
 
     led_init();
 
-    bool previos = false;
-    bool led = false;
-
-
-
     while (1)
     {
-        bool current = get_button_debounce(PIN);
-        if (previos == true && current == false)
-            {
-                led = !led;
-                led_set(led);
-            }
-        previos = current;
-    
+        blink();
         read_line();
 
     }
