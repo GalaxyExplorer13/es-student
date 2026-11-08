@@ -1,5 +1,5 @@
-# Проверка задания п2.2.2 на устройстве: попеременно спрашивает время с запуска и состояние светодиода
-# и записывает обмен в файл device-2-2-2.log.
+# Проверка задания п2.2.3 на устройстве: запускает расчёт π и спрашивает время с запуска, пока расчёт идёт
+# и записывает обмен в файл device-2-2-3.log.
 
 import time
 from datetime import datetime
@@ -10,19 +10,13 @@ from serial.tools import list_ports
 VENDOR_ID = 0x2E8A
 PRODUCT_ID = 0x000A
 
-TASK = "2.2.2"
+TASK = "2.2.3"
 PROJECT = "221-command-time"
-LOG_NAME = "device-2-2-2.log"
+LOG_NAME = "device-2-2-3.log"
 # Команда и сколько секунд слушать плату, прежде чем отправить следующую
 STEPS = [
-    ("uptime", 0.4),
-    ("boot_info", 0.4),
-    ("uptime", 0.4),
-    ("boot_info", 0.4),
-    ("uptime", 0.4),
-    ("boot_info", 0.4),
-    ("uptime", 0.4),
-    ("boot_info", 0.4),
+    ("calc_pi", 1),
+    ("uptime", 8),
 ]
 
 
